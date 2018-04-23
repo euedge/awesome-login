@@ -1,4 +1,4 @@
-# Login Webcomponent - implementation
+# Awesome Login Webcomponent
 
 ## Requirements:
 * AWS account and AWS CLI configurated with access key, secret and region
@@ -90,6 +90,7 @@ Copy this to the html
     successRedirect="<REDIRECT_URL_AFTER_LOGGING_IN>">
     logoutRedirect="<REDIRECT_URL_AFTER_LOGGED_OUT>">
 </aws-login>
+```
 
 
 ### 5. additional scripts
@@ -105,16 +106,18 @@ To make all this work, add this script to the head of your html document:
 ## How to use?
 
 ### just like a DOM element:
+``` js
 const awsLogin = document.querySelector('aws-login')
+```
 
 ### methods:
-awsLogin.facebookLogin()
-awsLogin.googleLogin()
-awsLogin.cognitoLogin()
-awsLogin.cognitoSignup()
-awsLogin.cognitoConfirm()
-awsLogin.logout()
-awsLogin.getJwtToken()
+* awsLogin.facebookLogin()
+* awsLogin.googleLogin()
+* awsLogin.cognitoLogin()
+* awsLogin.cognitoSignup()
+* awsLogin.cognitoConfirm()
+* awsLogin.logout()
+* awsLogin.getJwtToken()
 
 
 ## Contribution to the repo
