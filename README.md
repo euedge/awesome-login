@@ -9,7 +9,7 @@
 
 ## Setup
 
-### 1. set up first cloudformation stack: cognitoConfig.json
+### 1. set up first cloudformation stack: cognitoCF.json
 This will setup the aws resources: 
 * Cognito User Pool and its User Pool Client
 * Cognito Identity Pool
@@ -26,7 +26,7 @@ In the cognitoCF.json, replace the supported login providers with your facebook 
 
 run:
 ```sh
-$ aws cloudformation create-stack --stack-name <NAME1> --template-body file://./cloudformation.json --capabilities CAPABILITY_IAM
+$ aws cloudformation create-stack --stack-name COGNITO_STACK_NAME --template-body file://./cloudformation.json --capabilities CAPABILITY_IAM
 ```
 
 ### 2. copy zip to the previously created S3 bucket
@@ -50,7 +50,7 @@ In the lambdaConfig.json, add your shared secret as an environment variable, tha
 ```
 
 ```sh
-$ aws cloudformation create-stack --stack-name <NAME2> --template-body file://./lambdaCF.json --capabilities CAPABILITY_IAM
+$ aws cloudformation create-stack --stack-name LAMBDA_STACK_NAME --template-body file://./lambdaCF.json --capabilities CAPABILITY_IAM
 ```
 
 ### 4. set the attributes of the component
