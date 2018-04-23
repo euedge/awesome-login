@@ -1,0 +1,23 @@
+{
+  "name": "login-demo",
+  "version": "1.0.0",
+  "description": "Login Webcomponent Demo",
+  "engines": {
+    "node": "6.11.1"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.190.0",
+    "load-script": "^1.0.0"
+  },
+  "devDependencies": {
+    "amazon-cognito-identity-js": "^2.0.0",
+    "baconjs": "^2.0.0",
+    "crypto-js": "^3.1.9-1",
+    "webpack": "^3.11.0"
+  }
+}
