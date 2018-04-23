@@ -1,24 +1,9 @@
-# Login Webcomponent - demo site
-
-### Installation:
-
-The project requires [Node.js](https://nodejs.org/) to be installed.
-
-Make sure the node version in use is 6.11.1
-```sh
-$ nvm use 6.11.1
-$ npm install
-```
-
-To run the site, just run
-```sh
-$ node app.js
-```
-
 # Login Webcomponent - implementation
 
 ## Requirements:
 * AWS account and AWS CLI configurated with access key, secret and region
+
+### Optional
 * Facebook App - its AppId
 * Google Project - its ClientId
 
@@ -41,7 +26,7 @@ In the cognitoCF.json, replace the supported login providers with your facebook 
 
 run:
 ```sh
-$ aws cloudformation create-stack --stack-name <NAME_1> --template-body file://./cloudformation.json --capabilities CAPABILITY_IAM
+$ aws cloudformation create-stack --stack-name <NAME1> --template-body file://./cloudformation.json --capabilities CAPABILITY_IAM
 ```
 
 ### 2. copy zip to the previously created S3 bucket
@@ -65,7 +50,7 @@ In the lambdaConfig.json, add your shared secret as an environment variable, tha
 ```
 
 ```sh
-$ aws cloudformation create-stack --stack-name <NAME_2> --template-body file://./lambdaCF.json --capabilities CAPABILITY_IAM
+$ aws cloudformation create-stack --stack-name <NAME2> --template-body file://./lambdaCF.json --capabilities CAPABILITY_IAM
 ```
 
 ### 4. set the attributes of the component
