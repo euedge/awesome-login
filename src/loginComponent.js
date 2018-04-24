@@ -1,8 +1,8 @@
+import {CognitoUserPool} from 'amazon-cognito-identity-js';
+import Bacon from 'baconjs';
 import {FBAuthProvider, fbProvider} from './lib/facebook.js';
 import {GAuthProvider, gProvider} from './lib/google.js';
 import AWS from './lib/aws.js';
-import Bacon from '../../node_modules/baconjs/dist/Bacon.js';
-import {CognitoUserPool} from 'amazon-cognito-identity-js';
 import cognitoProvider from './lib/cognito';
 
 export default class extends window.HTMLElement {
@@ -11,7 +11,7 @@ export default class extends window.HTMLElement {
     this.userPoolId = '';
     this.userPoolClient = '';
     this.identityPoolId = '';
-    this.successRedirect = '';
+    this.loginRedirect = '';
     this.logoutRedirect = '';
 
     this.FBAuth = null;
@@ -71,7 +71,7 @@ export default class extends window.HTMLElement {
     this.userPoolId = this.getAttribute('userPoolID');
     this.userPoolClient = this.getAttribute('userPoolClient');
     this.identityPoolId = this.getAttribute('identityPoolID');
-    this.successRedirect = this.getAttribute('successRedirect');
+    this.loginRedirect = this.getAttribute('loginRedirect');
     this.logoutRedirect = this.getAttribute('logoutRedirect');
 
     this.FBAuth = fbApp ? new FBAuthProvider(fbProvider(fbApp)) : new Promise(resolve => resolve());
@@ -163,8 +163,8 @@ export default class extends window.HTMLElement {
         });
 
     let isCancelled = !this.dispatchEvent(event);
-    if (!isCancelled && this.user && this.successRedirect) {
-      window.location.href = this.successRedirect;
+    if (!isCancelled && this.user && this.loginRedirect) {
+      window.location.href = this.loginRedirect;
     }
     if (!isCancelled && !this.user && this.logoutRedirect) {
       window.location.href = this.logoutRedirect;

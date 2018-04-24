@@ -1,4 +1,4 @@
-import load from '../../../node_modules/load-script/index.js';
+import load from 'load-script';
 import AbstractAuthProvider from './abstractAuthProvider.js';
 
 export const gProvider = (new Promise(

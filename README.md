@@ -124,7 +124,7 @@ const awsLogin = document.querySelector('aws-login')
 
 install the node modules:
 ```sh
-$ npm init OR yarn install
+$ npm install OR yarn install
 ```
 
 bundle (with webpack)
